@@ -18,7 +18,7 @@ class Players extends React.Component {
     axios
       .get('http://localhost:5000/api/players')
       .then(response => {
-          console.log(response)
+      
         this.setState({ players: response.data });
       })
       .catch(err => console.log(err));
@@ -32,9 +32,9 @@ class Players extends React.Component {
           return (
             <div className="players" key={player.id}>
             
-              <h4>{player.name}</h4>
-             <h3>{player.country}</h3>
-             <p>{player.searches}</p>
+              <h4>Name:{player.name}</h4>
+             <h3>Country: {player.country}</h3>
+             <p>Searches: {player.searches}</p>
             </div>
           );
         })}
